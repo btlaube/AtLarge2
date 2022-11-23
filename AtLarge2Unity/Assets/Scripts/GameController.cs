@@ -43,12 +43,13 @@ public class GameController : MonoBehaviour {
     }
 
     public void StartRound() {
-        SpawnEnemies();
-        SetFurthestNPC();
+        //SpawnEnemies();
+        //SetFurthestNPC();
     }
 
     public void EndRound() {
         float percentCovered = FindPlayer();
+        Debug.Log(percentCovered);
         if (percentCovered >= percentCoveredThreshold) {
             audioManager.Play("Point");
             score++;
@@ -72,44 +73,10 @@ public class GameController : MonoBehaviour {
             Destroy(NPC.gameObject);
         }
 
-        for (int i = 0; i <= waveSize; i++) {
+        for (int i = 0; i < waveSize; i++) {
             int whichSprite = Random.Range(0, sprites.Length);
 
-            float randX;
-            float randY;
-            bool extremeAxis = Random.value > 0.5;
-            bool whichExtreme = Random.value > 0.5;
-            if(extremeAxis) {
-                if(whichExtreme) {
-                    randX = xRange;
-                }
-                else {
-                    randX = -xRange;
-                }
-                randY = Random.Range(-yRange, yRange);
-            }
-            else {
-                if(whichExtreme) {
-                    randY = yRange;
-                }
-                else {
-                    randY = -yRange;
-                }
-                randX = Random.Range(-xRange, xRange);
-            }
-
-            Vector3 spawnPosition = new Vector3(randX, randY, transform.position.z);
-
-            //Chooses z position
-            bool zPosition = Random.value > 0.3;
-            if (zPosition) {
-                spawnPosition.z = -1f;
-            }
-            else {
-                spawnPosition.z = 1f;
-            }
-
-            GameObject newEnemy = Instantiate(NPC, spawnPosition, Quaternion.identity, transform);
+            GameObject newEnemy = Instantiate(NPC, transform.position, Quaternion.identity, transform);
             newEnemy.GetComponent<SpriteRenderer>().sprite = sprites[whichSprite];
         }
     }
