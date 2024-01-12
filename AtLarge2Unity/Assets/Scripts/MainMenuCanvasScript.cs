@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainMenuCanvasScript : MonoBehaviour
-{
+public class MainMenuCanvasScript : MonoBehaviour {
+    
     [SerializeField] private LevelLoaderScript levelLoader;
 
     void Start() {

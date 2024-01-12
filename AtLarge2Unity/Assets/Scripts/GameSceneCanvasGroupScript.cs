@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameSceneCanvasGroupScript : MonoBehaviour
-{
+public class GameSceneCanvasGroupScript : MonoBehaviour {
+    
     [SerializeField] private LevelLoaderScript levelLoader;
 
     void Start() {

@@ -7,11 +7,11 @@ using TMPro;
 
 public class GameController : MonoBehaviour {
 
-    public Sprite[] sprites;
-    public GameObject NPC;
-    public Transform player;
-    public GameEvent onWin;
-    public GameEvent onLose;
+    [SerializeField] private Sprite[] sprites;
+    [SerializeField] private GameObject NPC;
+    [SerializeField] private Transform player;
+    [SerializeField] private GameEvent onWin;
+    [SerializeField] private GameEvent onLose;
 
     [SerializeField] private float waveSize = 10f;
     [SerializeField] private float xRange = 5f;
@@ -43,8 +43,8 @@ public class GameController : MonoBehaviour {
     }
 
     public void StartRound() {
-        //SpawnEnemies();
-        //SetFurthestNPC();
+        SpawnEnemies();
+        SetFurthestNPC();
     }
 
     public void EndRound() {

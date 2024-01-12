@@ -1,11 +1,10 @@
 using UnityEngine;
 using TMPro;
 
-public class MainMenuGameController : MonoBehaviour
-{
+public class MainMenuGameController : MonoBehaviour {
 
-    public Sprite[] sprites;
-    public GameObject NPC;
+    [SerializeField] private Sprite[] sprites;
+    [SerializeField] private GameObject NPC;
 
     [SerializeField] private float waveSize = 10f;
     [SerializeField] private float xRange = 5f;
@@ -15,7 +14,6 @@ public class MainMenuGameController : MonoBehaviour
     private float timer;
 
     void Start() {
-
         timer = Time.deltaTime;
 
         float vertExtent = Camera.main.GetComponent<Camera>().orthographicSize;    

@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCBehavior : MonoBehaviour
-{
-    public float speed = 5f;
-    public Vector2 target = new Vector2(1f, 1f);
+public class NPCBehavior : MonoBehaviour {
+
     public Transform furthestNPC;
+    public float speed = 5f;
+    public Vector2 target;
 
     [SerializeField] private float xRange = 5f;
     [SerializeField] private float yRange = 5f;

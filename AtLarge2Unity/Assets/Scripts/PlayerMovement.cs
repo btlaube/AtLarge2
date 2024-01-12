@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
-{
-    public float speed = 5f;
+public class PlayerMovement : MonoBehaviour {
+
+    [SerializeField] private float speed = 5f;
 
     private Vector2 movement;
     private SpriteRenderer sr;
@@ -17,8 +17,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();     
     }
 
-    void Update()
-    {
+    void Update() {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 

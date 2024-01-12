@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelLoaderScript : MonoBehaviour
-{
+public class LevelLoaderScript : MonoBehaviour {
+
+    [SerializeField] private Animator transition;
+
     public static LevelLoaderScript instance;
-    public Animator transition;
 
     [SerializeField] private float transitionTime = 1f;
 

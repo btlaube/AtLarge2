@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFinder : MonoBehaviour
-{
-    public Transform player;
-    public Transform NPC1;
+public class PlayerFinder : MonoBehaviour {
+    
+    [SerializeField] private Transform player;
+    [SerializeField] private Transform NPC1;
 
     void Update() {
         float percentXUncovered = Mathf.Abs(player.position.x - NPC1.position.x)/0.454295f;

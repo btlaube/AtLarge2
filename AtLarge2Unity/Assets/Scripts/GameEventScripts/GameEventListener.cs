@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.Events;
-public class GameEventListener : MonoBehaviour
-{
-    public GameEvent gameEvent;
-    public UnityEvent onEventTriggered;
+
+public class GameEventListener : MonoBehaviour {
+    [SerializeField] private GameEvent gameEvent;
+    [SerializeField] private UnityEvent onEventTriggered;
 
     void OnEnable() {
         gameEvent.AddListener(this);

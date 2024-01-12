@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimerControllerScript : MonoBehaviour
-{
+public class TimerControllerScript : MonoBehaviour {
 
-    public GameEvent onTimerEnd;
-    public GameEvent onTimerStart;
+    [SerializeField] private GameEvent onTimerEnd;
+    [SerializeField] private GameEvent onTimerStart;
 
     private Animator animator;
     private AudioManager audioManager;
